@@ -10,6 +10,8 @@ class Classroom(models.Model):
     numbers_of_doors= models.PositiveSmallIntegerField()
     class_color = models.CharField(max_length = 20)
     number_of_art = models.PositiveSmallIntegerField()
+    class_motto = models.CharField(max_length = 30)
+
 
     
 
