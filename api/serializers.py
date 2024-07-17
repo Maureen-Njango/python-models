@@ -1,15 +1,28 @@
-from root_framework import serializer
+from rest_framework import serializers
+from classperiod.models import ClassPeriod
 from student.models import student
-from root_framework.views import APIview
-from rest_framework.Response import Response
+from teacher.models import Teacher
+from course.models import Courses
 
 
-class studentserielizer(serializers.modelserializer):
+class Studentserielizer(serializers.modelserializer):
     class meta:
-        model = student
+        model = Student
         fields = "--all--"
-class studentListView(APIview):
-    def get(self, request):
-        students = student.object.all()
-        serializer = student.serializer(students, many = True)
-        return Response(serializer.data)
+
+class ClassPeriodserielizer(serializers.modelserializer):
+    class meta:
+        model = ClassPeriod
+        fields = "--all--"
+
+class Coursesserielizer(serializers.modelserializer):
+    class meta:
+        model = Courses
+        fields = "--all--"
+
+class Teacherserielizer(serializers.modelserializer):
+    class meta:
+        model = Teacher
+        fields = "--all--"
+
+
